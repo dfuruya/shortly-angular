@@ -12,7 +12,7 @@
     <input type="title" class="text" name="title" ng-model="link.title">
   </form>
 
-  <div ng-repeat="link in data.links | filter:link.title">
+  <div ng-model="orderProp" ng-repeat="link in data.links | filter:link.title | orderBy:orderProp">
     <div class="link">
       <img src="../assets/redirect_icon.png"/>
       <div class="info">
