@@ -8,7 +8,11 @@
     </ul>
   </div>
 
-  <div ng-repeat="link in data.links">
+  <form name="filterForm">
+    <input type="title" class="text" name="title" ng-model="link.title">
+  </form>
+
+  <div ng-repeat="link in data.links | filter:link.title">
     <div class="link">
       <img src="../assets/redirect_icon.png"/>
       <div class="info">
